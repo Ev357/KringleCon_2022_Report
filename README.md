@@ -85,3 +85,11 @@
 
 ### Prison Escape
 - So i just find this guide on the HackTricks website [Docker Breakout](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation#mounting-disk-poc1).
+- If we do `sudo -l`, we can see we are already root.
+- So we can check if there are any disks attached with the `sudo fisk -l` command.
+- We can see here the `/dev/vda` disk, so we can just mount it `sudo mkdir -p /mnt/hola;sudo mount /dev/vda /mnt/hola`.
+- We successfully mount the disk we can navigate to it `cd /mnt/hola` and find the flag `cat home/jailer/.ssh/jail.key.priv`.
+- Yeee `082bb339ec19de4935867`.
+
+### Jolly CI/CD
+- 
