@@ -31,8 +31,8 @@
 - I think so.
 - Answer: `Yes`
 
-## Windows Event Logs
-- This one is little bit harder so i will just say the answers:
+### Windows Event Logs
+- This one is little bit harder so i will just say the answers, it's good to work with the actual Windows Event Log app.
 1.
 - Answer: `12/24/2022`
 2.
@@ -51,3 +51,37 @@
 - Answer: `4104`
 9.
 - Answer: `Yes`
+10.
+- Answer: `honey`
+
+### Suricata Regatta
+- Documentation: https://suricata.readthedocs.io/en/suricata-6.0.0/rules/intro.html
+1.
+- So first we need to catch the DNS lookups for this `adv.epostoday.uk`.
+- Add `alert dns any any -> any any (msg:"Known bad DNS lookup, possible Dridex infection"; dns.query; content:"adv.epostoday.uk"; nocase; sid:1;)` to the `suricata.rules` file.
+
+2.
+- Ok, now we need to create a rule that catch the http communication between this IP `192.185.57.242` and with their "internal system", the `$HOME_NET`.
+- We can find the `$HOME_NET` in the already set configurations.
+- We need to catch the communication from both sides, thats why are going to use this `<>`.
+- Add `alert http 192.185.57.242 any <> $HOME_NET any (msg:"Investigate suspicious connections, possible Dridex infection";sid:2;)` to the `suricata.rules` file.
+
+3.
+- Cool, now we need to add a rule that catch TLS certificates with a specific CN.
+- Add `alert tls any any <> any any (msg:"Investigate bad certificates, possible Dridex infection";tls.subject:"CN=heardbellith.Icanwepeh.nagoya"; sid:3;)` to the `suricata.rules` file.
+
+4.
+- I know, the GZip thing sound kinda scary but if look in the documentation, we can see that the `http.response_body` already look for strings in possible gzips.
+- Add `alert http any any -> any any (http.response_body;msg:"Suspicious JavaScript function, possible Dridex infection";content:"let byteCharacters = atob"; sid:4;)` to the `suricata.rules` file.
+
+## Elfen Ring
+### Clone with a Difference
+- Basicly we just need to clone from this `git@haugfactory.com:asnowball/aws_scripts.git` gitlab repo.
+- I just converted the ssh clone thing to https like this `https://haugfactory.com/asnowball/aws_scripts.git`.
+- Now we can clone it `git clone https://haugfactory.com/asnowball/aws_scripts.git`.
+- We can change the directory `cd aws_scripts`, and cat the `README.md` file.
+- The last word there is `maintainers`.
+- Just type this word in the `runtoanswer`.
+
+### Prison Escape
+- So i just find this guide on the HackTricks website [Docker Breakout](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation#mounting-disk-poc1)
