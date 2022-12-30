@@ -32,4 +32,22 @@
 - Answer: `Yes`
 
 ## Windows Event Logs
-1. 
+- This one is little bit harder so i will just say the answers:
+1.
+- Answer: `12/24/2022`
+2.
+- Answer: `Recipe.txt`
+3.
+- Answer: `$foo = Get-Content .\Recipe| % {$_ -replace 'honey', 'fish oil'}`
+4.
+- Answer: `$foo | Add-Content -Path 'Recipe'`
+5.
+- Answer: `Recipe.txt`
+6.
+- Answer: `Yes`
+7.
+- Answer: `No`
+8.
+- Answer: `4104`
+9.
+- Answer: `Yes`
