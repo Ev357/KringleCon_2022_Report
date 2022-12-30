@@ -18,5 +18,11 @@
 - answer: `192.185.57.242`
 5.
 - Wireshark -> File -> Export Objects -> HTTP... -> app.php (The larger one) -> Save
-- If we explore the app.php file we can see in the javascript function that it save a file from the blob to the host with file name.
+- If we explore the app.php file we can see in the javascript function that it save a file from the blob to the host with the following file name.
 - answer: `Ref_Sept24-2020.zip`
+6.
+- We can set the following filter to wireshark `tls.handshake.type == 2` for filtering the "Server Hello".
+- Wireshark -> Edit -> Find Packet...
+- We set the filter to `Packet Details`, check the `Case sensitive`, `String` and the searched string is `CountryName:`.
+- If we click on the find button again and again, we can see all the country codes (US, IL, SS).
+- We can go to the (https://www.digicert.com/kb/ssl-certificate-country-codes.htm)
