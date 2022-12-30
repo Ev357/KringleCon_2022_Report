@@ -25,4 +25,4 @@
 - Wireshark -> Edit -> Find Packet...
 - We set the filter to `Packet Details`, check the `Case sensitive`, `String` and the searched string is `CountryName:`.
 - If we click on the find button again and again, we can see all the country codes (US, IL, SS).
-- We can go to the (https://www.digicert.com/kb/ssl-certificate-country-codes.htm)
+- We can go to the https://www.digicert.com/kb/ssl-certificate-country-codes.htm
