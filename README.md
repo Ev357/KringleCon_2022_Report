@@ -137,3 +137,15 @@ git push git@gitlab.flag.net.internal:/rings-of-powder/wordpress.flag.net.intern
 ```
 - Now we cant wait for the reverse shell. Unbackground the netcat listener with `fg`.
 - *Connection from 172.18.1.149 60740 received!* Y000000
+- If you noticed in the *.gitlab-ci.yml* file, there was also a ssh command with some ssh key `ssh -i /etc/gitlab-runner/hhc22-wordpress-deploy` so we can try to connect to it (the flag is on the wordress target not the gitlab so we haven't won yet).
+```
+ssh -i /etc/gitlab-runner/hhc22-wordpress-deploy wordpress.flag.net.internal
+```
+- The flag is in the / folder.
+```bash
+cat /flag.txt
+```
+- Flag: `oI40zIuCcN8c3MhKgQjOMN8lfYtVqcKT`
+
+## Web Ring
+### Naughty IP
