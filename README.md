@@ -92,4 +92,6 @@
 - Yeee `082bb339ec19de4935867`.
 
 ### Jolly CI/CD
-- 
+- Ok, so first things first this challange need realy some time to bake.
+- In the meantime, you might have noticed that *Tinsel Upatree* leaked the git repository.
+- I know it's stupid but you can watch it `watch -n 10 "git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git"`.
