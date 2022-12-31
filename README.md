@@ -108,6 +108,7 @@ AAAEBL0qH+iiHi9Khw6QtD6+DHwFwYc50cwR0HjNsfOVXOcv7AsdI7HOvk4piOcwLZfDot
 PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
 -----END OPENSSH PRIVATE KEY-----
 
+
 ```
 - We can store it in a file. I don't like when the file is in the repository, so i just put it in the directory above with `nano ../id_rsa`. Dont forget the extra line on the end.
 - Now we must give the standard permissions to the *id_rsa* file with `chmod 600 ../id_rsa`.
