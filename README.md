@@ -95,3 +95,4 @@
 - Ok, so first things first this challange need realy some time to bake.
 - In the meantime, you might have noticed that *Tinsel Upatree* leaked the git repository.
 - I know it's stupid, but you can watch it (the 10 means the reload time in seconds) `watch -n 10 "git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git"`.
+- Once you see *updating files* stuff you are ready to go. Just remove the repo `rm -f -r wordpress.flag.net.internal` and clone it again properly `git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git`.
