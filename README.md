@@ -141,7 +141,7 @@ git push git@gitlab.flag.net.internal:/rings-of-powder/wordpress.flag.net.intern
 ```
 ssh -i /etc/gitlab-runner/hhc22-wordpress-deploy wordpress.flag.net.internal
 ```
-- The flag is in the / folder.
+- The flag is in the */* folder.
 ```bash
 cat /flag.txt
 ```
