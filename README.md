@@ -149,3 +149,27 @@ cat /flag.txt
 
 ## Web Ring
 ### Naughty IP
+- Unzip the zip file and open wireshark on the *victim.pcap* file.
+- Wireshark -> Statistics -> Conversations
+- Click twice on the *Packets* to order the items by the number of packets.
+- And yep, one ip has *16603* packets.
+- Answer: `18.222.86.32`
+
+### Credential Mining
+- So we can just filter the ip we found above in wireshark with the `ip.addr == 18.222.86.32` filter.
+- We can add a *http* filter `ip.addr == 18.222.86.32 && http`.
+- If we scroll a bit you can see the login post requests.
+- Right click on the first one, Follow > HTTP Stream and **boom**.
+- Answer: `alice`.
+
+### 404 FTW
+- Just apply this filter in wireshark to filter out just the communication with the target server, get request and show the http responses.
+```
+ip.addr == 18.222.86.32 && ip.src == 10.12.42.16 && http.request.method == GET || http.response
+```
+- If you scroll a bit you can see the *NOT FOUND* things. Thats the bruteforce attack.
+- Find the first one with *200 OK (text/html)*, Follow > HTTP Stream.
+- Answer: `/proc`
+
+### IMDS, XXE, and Other Abbreviations
+- 
