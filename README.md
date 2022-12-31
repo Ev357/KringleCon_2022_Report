@@ -96,7 +96,7 @@
 - In the meantime, you might have noticed that *Tinsel Upatree* leaked the git repository.
 - I know it's stupid, but you can watch it (the 10 means the reload time in seconds) `watch -n 10 "git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git"`.
 - Once you see *Updating files* stuff you are ready to go. Just remove the repo `rm -f -r wordpress.flag.net.internal` and clone it again properly `git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git`. Then you can navigete to it of course `cd wordpress.flag.net.internal`.
-- This challange wants us to so stuff with github. So we can automaticly just do the `git log` command.
+- This challange wants us to do some stuff with github. So we can automaticly just do the `git log` command.
 - Ooh and this log *whoops* looks interesting. We can just do the `git show e19f653bde9ea3de6af21a587e41e7a909db1ca5`.
 - And we found a ssh key. Dont forget to delete the *-* in each line.
 ```
