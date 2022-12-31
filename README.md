@@ -181,3 +181,14 @@ ip.addr == 18.222.86.32 && xml
 - Answer: `http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance`.
 
 ### Open Boria Mine Door
+- We just need to complete 3 of them.
+- Ok, letters are boring so let's try *XSS*.
+```
+<style>body {background-color: white;}</style>
+```
+- Cool, now we can do this thing in the next two steps. Only the third box *background-color* doesn't work, so we'll use svg.
+1. Answer: `<style>body {background-color: white;}</style>`
+2. Answer: `<style>body {background-color: white;}</style>`
+3. Answer: `<svg><rect width="300" height="400" fill="blue" /></svg>`
+
+### Glamtariel's Fountain
