@@ -135,5 +135,5 @@ export GIT_SSH_COMMAND='ssh -i /home/samways/id_rsa'
 ```bash
 git push git@gitlab.flag.net.internal:/rings-of-powder/wordpress.flag.net.internal.git
 ```
-- Now we cant wait for the reverse shell. Unbackground the reverse shell with `fg`.
+- Now we cant wait for the reverse shell. Unbackground the netcat listener with `fg`.
 - *Connection from 172.18.1.149 60740 received!* Y000000
