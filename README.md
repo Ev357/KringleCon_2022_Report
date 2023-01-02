@@ -357,4 +357,6 @@ Accept-Encoding: gzip, deflate
 - Let's visit the image. And... we won!!!
 - Answer: `goldring-morethansupertopsecret76394734.png`
 
-### test
+## Cloud Ring
+### AWS CLI Intro
+- 
