@@ -439,7 +439,26 @@ Default output format [None]: json
 }
 ```
 - So our user name is *haug*.
-- When we google around we come across the command `aws iam list-attached-user-policies` with parameter `--user-name`, so just use it and use tha username we find above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html).
+- When we google around we come across the command `aws iam list-attached-user-policies` with parameter `--user-name`, so just use it and use that username we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html).
 - Answer: `aws iam list-attached-user-policies --user-name haug`.
 
-2. 
+2. *Now, view or get the policy that is attached to your user.*
+- Previous *aws iam list-attached-user-policies* output:
+```json
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "TIER1_READONLY_POLICY",
+            "PolicyArn": "arn:aws:iam::602123424321:policy/TIER1_READONLY_POLICY"
+        }
+    ],
+    "IsTruncated": false
+}
+```
+- So we found the *PolicyName* and the *PolicyArn*.
+- When we google around we come across the command `aws iam get-policy` with parameter `--policy-arn`, so just use it and use that *PolicyArn* we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html).
+- Answer: `aws iam get-policy --policy-arn arn:aws:iam::602123424321:policy/TIER1_READONLY_POLICY`.
+
+3. *Attached policies can have multiple versions. View the default version of this policy.*
+- When we google around we come across the command `aws iam get-policy-version` with parameters `--policy-arn` and `--version-id` (in our case `v1`). [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html).
+- Answer: `aws iam get-policy-version --policy-arn arn:aws:iam::602123424321:policy/TIER1_READONLY_POLICY --version-id v1`.
