@@ -428,5 +428,18 @@ Default output format [None]: json
 ```
 - And we can finally do the `aws sts get-caller-identity`.
 
-2. *Managed (think: shared) policies can be attached to multiple users. Use the AWS CLI to find any policies attached to your user.*
-- 
+### Exploitation via AWS CLI
+1. *Managed (think: shared) policies can be attached to multiple users. Use the AWS CLI to find any policies attached to your user.*
+- Previous *aws sts get-caller-identity* output:
+```json
+{
+    "UserId": "AIDAJNIAAQYHIAAHDDRA",
+    "Account": "602123424321",
+    "Arn": "arn:aws:iam::602123424321:user/haug"
+}
+```
+- So our user name is *haug*.
+- When we google around we come across the command `aws iam list-attached-user-policies` with parameter `--user-name`, so just use it and use tha username we find above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html).
+- Answer: `aws iam list-attached-user-policies --user-name haug`
+
+2. 
