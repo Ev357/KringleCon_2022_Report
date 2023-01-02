@@ -413,7 +413,7 @@ Email: alabaster snowball <alabaster@northpolechristmastown.local>
 ```
 - It found some credentials in the *put_policy.py* file.
 - We can clone the repo, checkout that commit and see what is in that file.
-```bash
+```console
 elf@5f7babb2b521:~$ git clone https://haugfactory.com/asnowball/aws_scripts.git
 Cloning into 'aws_scripts'...
 remote: Enumerating objects: 64, done.
