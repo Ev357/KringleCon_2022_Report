@@ -507,3 +507,6 @@ Default output format [None]: json
     "IsTruncated": false
 }
 ```
+- So we found the bucket name.
+- When we google around we come across the command `aws s3api list-objects` with parameter `--bucket`. Use that bucket name that we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects.html).
+- 
