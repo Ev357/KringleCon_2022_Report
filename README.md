@@ -537,6 +537,6 @@ Default output format [None]: json
 - When we google around we come across the command `aws lambda get-function-url-config` with parameter `--function-name`. Use that function name that we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/lambda/get-function-url-config.html).
 - Answer: `aws lambda get-function-url-config --function-name smogmachine_lambda`
 
-### Burning Ring of Fire
-## Buy a Hat
+## Burning Ring of Fire
+### Buy a Hat
 - 
