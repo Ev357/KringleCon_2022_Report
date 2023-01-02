@@ -282,6 +282,7 @@ Accept-Encoding: gzip, deflate
   <reqType>xml</reqType>
 </root>
 ```
+```
     - Response:
 ```json
 {
