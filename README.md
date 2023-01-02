@@ -507,6 +507,36 @@ Default output format [None]: json
     "IsTruncated": false
 }
 ```
-- So we found the bucket name.
+- So we found the bucket name (*smogmachines3*).
 - When we google around we come across the command `aws s3api list-objects` with parameter `--bucket`. Use that bucket name that we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects.html).
+- Answer: `aws s3api list-objects --bucket smogmachines3`
+
+7. *The attached user policy provided you several Lambda privileges. Use the AWS CLI to list Lambda functions.*
+- When we google around we come across the command `aws lambda list-functions`. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/lambda/list-functions.html).
+- Answer: `aws lambda list-functions`
+
+8. *Lambda functions can have public URLs from which they are directly accessible. Use the AWS CLI to get the configuration containing the public URL of the Lambda function.*
+- Previous *aws lambda list-functions* output:
+```json
+{
+    "Functions": [
+        {
+            "FunctionName": "smogmachine_lambda",
+            "FunctionArn": "arn:aws:lambda:us-east-1:602123424321:function:smogmachine_lambda",
+
+            ...
+
+            "EphemeralStorage": {
+                "Size": 512
+            }
+        }
+    ]
+}
+```
+- So we found the function name.
+- When we google around we come across the command `aws lambda get-function-url-config` with parameter `--function-name`. Use that function name that we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/lambda/get-function-url-config.html).
+- Answer: `aws lambda get-function-url-config --function-name smogmachine_lambda`
+
+### Burning Ring of Fire
+## Buy a Hat
 - 
