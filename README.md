@@ -215,3 +215,28 @@ RINGLIST
 SIMPLE FORMAT
 ```
 - So the first suspicious thing is that we can enter other request types in the post request, that's weird.
+- That means we can try *XXE* attack using xml.
+- So let's change the request to xml using [this online converter](https://www.convertjson.com/json-to-xml.htm).
+```xml
+POST /dropped HTTP/2
+Host: glamtarielsfountain.com
+Cookie: MiniLembanh=Your cookie; GCLB="Your cookie"
+Content-Length: Your length
+Accept: application/json
+X-Grinchum: Your cookie
+Content-Type: application/xml
+Sec-Ch-Ua-Platform: "Linux"
+Origin: https://glamtarielsfountain.com
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://glamtarielsfountain.com/
+Accept-Encoding: gzip, deflate
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <imgDrop>img2</imgDrop>
+  <who>princess</who>
+  <reqType>xml</reqType>
+</root>
+```
