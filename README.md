@@ -428,4 +428,5 @@ Default output format [None]: json
 ```
 - And we can finally do the `aws sts get-caller-identity`.
 
-### 
+2. *Managed (think: shared) policies can be attached to multiple users. Use the AWS CLI to find any policies attached to your user.*
+- 
