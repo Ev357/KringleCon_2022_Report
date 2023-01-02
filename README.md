@@ -389,27 +389,7 @@ Repository: https://haugfactory.com/asnowball/aws_scripts.git
 Timestamp: 2022-09-07 07:53:12 -0700 -0700
 Line: 6
 
-Found unverified result 🐷🔑❓
-Detector Type: Gitlab
-Decoder Type: PLAIN
-Raw result: add-a-file-using-the-
-Timestamp: 2022-09-06 19:54:48 +0000 UTC
-Line: 14
-Commit: 2c77c1e0a98715e32a277859864e8f5918aacc85
-File: README.md
-Email: alabaster snowball <alabaster@northpolechristmastown.local>
-Repository: https://haugfactory.com/asnowball/aws_scripts.git
-
-Found unverified result 🐷🔑❓
-Detector Type: Gitlab
-Decoder Type: BASE64
-Raw result: add-a-file-using-the-
-Repository: https://haugfactory.com/asnowball/aws_scripts.git
-Timestamp: 2022-09-06 19:54:48 +0000 UTC
-Line: 14
-Commit: 2c77c1e0a98715e32a277859864e8f5918aacc85
-File: README.md
-Email: alabaster snowball <alabaster@northpolechristmastown.local>
+...
 ```
 - It found some credentials in the *put_policy.py* file.
 - We can clone the repo, checkout that commit and see what is in that file.
@@ -464,3 +444,6 @@ AWS Secret Access Key [None]: e95qToloszIgO9dNBsQMQsc5/foiPdKunPJwc1rL
 Default region name [None]: us-east-1
 Default output format [None]: json
 ```
+- And we can finally do the `aws sts get-caller-identity`.
+
+### 
