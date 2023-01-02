@@ -462,3 +462,48 @@ Default output format [None]: json
 3. *Attached policies can have multiple versions. View the default version of this policy.*
 - When we google around we come across the command `aws iam get-policy-version` with parameters `--policy-arn` and `--version-id` (in our case `v1`). [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html).
 - Answer: `aws iam get-policy-version --policy-arn arn:aws:iam::602123424321:policy/TIER1_READONLY_POLICY --version-id v1`.
+
+4. *Inline policies are policies that are unique to a particular identity or resource. Use the AWS CLI to list the inline policies associated with your user.*
+- When we google around we come across the command `list-user-policies` with parameter `--user-name`. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/list-user-policies.html).
+- Answer: `aws iam list-user-policies --user-name haug`
+
+5. *Now, use the AWS CLI to get the only inline policy for your user.*
+- Previous *aws iam list-user-policies* output:
+```json
+{
+    "PolicyNames": [
+        "S3Perms"
+    ],
+    "IsTruncated": false
+}
+```
+- So we found a new *PolicyName*.
+- When we google around we come across the command `aws iam get-user-policy` with parameters `--user-name` and `--policy-name`. Use that *PolicyName* we found above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user-policy.html).
+- Answer: `aws iam get-user-policy --user-name haug --policy-name S3Perms`
+
+6. *The inline user policy named S3Perms disclosed the name of an S3 bucket that you have permissions to list objects. List those objects!*
+- Previous *aws iam get-user-policy* output:
+```json
+{
+    "UserPolicy": {
+        "UserName": "haug",
+        "PolicyName": "S3Perms",
+        "PolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "s3:ListObjects"
+                    ],
+                    "Resource": [
+                        "arn:aws:s3:::smogmachines3",
+                        "arn:aws:s3:::smogmachines3/*"
+                    ]
+                }
+            ]
+        }
+    },
+    "IsTruncated": false
+}
+```
