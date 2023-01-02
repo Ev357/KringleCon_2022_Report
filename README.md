@@ -369,8 +369,8 @@ Accept-Encoding: gzip, deflate
 - Answer: `aws sts get-caller-identity`
 
 ### Trufflehog Search
-- So we have to find out some credentials in github repo (*https://haugfactory.com/asnowball/aws_scripts.git*) using tool *trufflehog*.
-- Let's find out what it can do:
+1. *Use Trufflehog to find credentials in the Gitlab instance at https://haugfactory.com/asnowball/aws_scripts.git.*
+- Let's find out what that tool can do:
 ```bash
 trufflehog git https://haugfactory.com/asnowball/aws_scripts.git
 ```
@@ -403,38 +403,20 @@ elf@5f7babb2b521:~$ cd aws_scripts/
 elf@5f7babb2b521:~/aws_scripts$ git checkout 106d33e1ffd53eea753c1365eafc6588398279b5
 Note: switching to '106d33e1ffd53eea753c1365eafc6588398279b5'.
 
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by switching back to a branch.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -c with the switch command. Example:
-
-  git switch -c <new-branch-name>
-
-Or undo this operation with:
-
-  git switch -
-
-Turn off this advice by setting config variable advice.detachedHead to false
+...
 
 HEAD is now at 106d33e added
 elf@5f7babb2b521:~/aws_scripts$ cat put_policy.py 
-import boto3
-import json
 
+...
 
 iam = boto3.client('iam',
     region_name='us-east-1',
     aws_access_key_id="AKIAAIDAYRANYAHGQOHD",
     aws_secret_access_key="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",
 )
-# arn:aws:ec2:us-east-1:accountid:instance/*
-response = iam.put_user_policy(
-    PolicyDocument='{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["ssm:SendCommand"],"Resource":["arn:aws:ec2:us-east-1:748127089694:instance/i-0415bfb7dcfe279c5","arn:aws:ec2:us-east-1:748127089694:document/RestartServices"]}]}',
-    PolicyName='AllAccessPolicy',
-    UserName='nwt8_test',
-)
+
+...
 ```
 - Cool, we found some credentials. Let's configure them with `aws configure`.
 ```console
