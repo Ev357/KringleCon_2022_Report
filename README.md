@@ -456,4 +456,11 @@ response = iam.put_user_policy(
     UserName='nwt8_test',
 )
 ```
-- 
+- Cool, we found some credentials. Let's configure them with `aws configure`.
+```console
+elf@5f7babb2b521:~/aws_scripts$ aws configure
+AWS Access Key ID [None]: AKIAAIDAYRANYAHGQOHD
+AWS Secret Access Key [None]: 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
+Default region name [None]: us-east-1
+Default output format [None]: json
+```
