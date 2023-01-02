@@ -193,5 +193,16 @@ ip.addr == 18.222.86.32 && xml
 
 ### Glamtariel's Fountain
 - So let's first talk about what we are up against, because the pages look quite chaotic at first glance.
-- We have a princess and fountains here.
+- We have a princess and fountain here.
 - In the top right corner we have four "conversations" that we can drag to one of them and they will tell us some information about that "topic".
+- Drag one of the conversations to one of them and notice in the developer tools, in the *Network* tab (I use Google Chrome), a post request to */dropped* in this format:
+```json
+{
+   "imgDrop":"img1",
+   "who":"princess",
+   "reqType":"json"
+}
+```
+- One of the hints says that the early parts of this challenge can be solved by focusing on Glamtariel's WORDS.
+- So let's write all those WORDS first. You have to drag and drop each theme onto each of them. If you don't, you will get the "Zoom, Zoom, very hasty" response in the later parts of the challenge. And directly use the burp browser or proxy, whichever suits you better.
+```
