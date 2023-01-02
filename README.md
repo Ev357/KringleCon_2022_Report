@@ -204,5 +204,14 @@ ip.addr == 18.222.86.32 && xml
 }
 ```
 - One of the hints says that the early parts of this challenge can be solved by focusing on Glamtariel's WORDS.
-- So let's write all those WORDS first. You have to drag and drop each theme onto each of them. If you don't, you will get the "Zoom, Zoom, very hasty" response in the later parts of the challenge. And directly use the burp browser or proxy, whichever suits you better.
+- So let's write all those WORDS first. You have to drag and drop each theme onto each of them. If you don't, you will get the "Zoom, Zoom, very hasty" response in the later parts of the challenge, directly use the burp browser or proxy, whichever suits you better. Send one of the requests to the repeater with CTRL-R and just turn *Intercept off*.
+- Yes and also send one of the requests to the repeater with CTRL-R
 ```
+TAMPER
+PATH
+APP
+TYPE
+RINGLIST
+SIMPLE FORMAT
+```
+- So the first suspicious thing is that we can enter other request types in the post request, that's weird.
