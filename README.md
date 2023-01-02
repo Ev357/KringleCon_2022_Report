@@ -290,8 +290,10 @@ Accept-Encoding: gzip, deflate
   "visit": "none"
 }
 ```
+
 - redring.txt:
     - Response:
+    
 ```json
 {
   "appResp": "Hmmm, you still seem awfully interested in these rings. I can't blame you, they are pretty nice.^Oooooh, I can just tell she'd like to talk about them some more.",
