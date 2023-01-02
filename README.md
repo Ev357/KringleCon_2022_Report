@@ -192,4 +192,6 @@ ip.addr == 18.222.86.32 && xml
 3. Answer: `<svg><rect width="300" height="400" fill="blue" /></svg>`
 
 ### Glamtariel's Fountain
-- 
+- So let's first talk about what we are up against, because the pages look quite chaotic at first glance.
+- We have a princess and fountains here.
+- In the top right corner we have four "conversations" that we can drag to one of them and they will tell us some information about that "topic".
