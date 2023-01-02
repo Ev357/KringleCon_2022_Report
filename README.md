@@ -354,7 +354,7 @@ Accept-Encoding: gzip, deflate
   "visit": "static/images/x_phial_pholder_2022/goldring-morethansupertopsecret76394734.png,200px,290px"
 }
 ```
-- Let's visit the image. And we won!!!
+- Let's visit the image. And... we won!!!
 - Answer: `goldring-morethansupertopsecret76394734.png`
 
 ### test
