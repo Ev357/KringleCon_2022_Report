@@ -440,6 +440,6 @@ Default output format [None]: json
 ```
 - So our user name is *haug*.
 - When we google around we come across the command `aws iam list-attached-user-policies` with parameter `--user-name`, so just use it and use tha username we find above. [Documentation](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html).
-- Answer: `aws iam list-attached-user-policies --user-name haug`
+- Answer: `aws iam list-attached-user-policies --user-name haug`.
 
 2. 
