@@ -411,3 +411,49 @@ Commit: 2c77c1e0a98715e32a277859864e8f5918aacc85
 File: README.md
 Email: alabaster snowball <alabaster@northpolechristmastown.local>
 ```
+- It found some credentials in the *put_policy.py* file.
+- We can clone the repo, checkout that commit and see what is in that file.
+```console
+elf@5f7babb2b521:~$ git clone https://haugfactory.com/asnowball/aws_scripts.git
+Cloning into 'aws_scripts'...
+remote: Enumerating objects: 64, done.
+remote: Total 64 (delta 0), reused 0 (delta 0), pack-reused 64
+Unpacking objects: 100% (64/64), 23.83 KiB | 1.32 MiB/s, done.
+elf@5f7babb2b521:~$ cd aws_scripts/
+elf@5f7babb2b521:~/aws_scripts$ git checkout 106d33e1ffd53eea753c1365eafc6588398279b5
+Note: switching to '106d33e1ffd53eea753c1365eafc6588398279b5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 106d33e added
+elf@5f7babb2b521:~/aws_scripts$ cat put_policy.py 
+import boto3
+import json
+
+
+iam = boto3.client('iam',
+    region_name='us-east-1',
+    aws_access_key_id="AKIAAIDAYRANYAHGQOHD",
+    aws_secret_access_key="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",
+)
+# arn:aws:ec2:us-east-1:accountid:instance/*
+response = iam.put_user_policy(
+    PolicyDocument='{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["ssm:SendCommand"],"Resource":["arn:aws:ec2:us-east-1:748127089694:instance/i-0415bfb7dcfe279c5","arn:aws:ec2:us-east-1:748127089694:document/RestartServices"]}]}',
+    PolicyName='AllAccessPolicy',
+    UserName='nwt8_test',
+)
+```
+- 
