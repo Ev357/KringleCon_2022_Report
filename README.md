@@ -359,4 +359,55 @@ Accept-Encoding: gzip, deflate
 
 ## Cloud Ring
 ### AWS CLI Intro
-- 
+1. *You may not know this, but AWS CLI help messages are very easy to access.*
+- Answer: Just type `aws help` and then `q` to exit.
+2. *Next, please configure the default aws cli credentials with the access key AKQAAYRKO7A5Q5XUY2IY, the secret key qzTscgNdcdwIo/soPKPoJn9sBrl5eMQQL19iO5uf and the region us-east-1.*
+- They immediately give us a [link](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config) where they show that we can simply set it up with a command `aws configure`.
+- Answer: Type `aws configure`, then type `AKQAAYRKO7A5Q5XUY2IY`, then type `qzTscgNdcdwIo/soPKPoJn9sBrl5eMQQL19iO5uf`, then type `us-east-1`, for the *output format* just choose `json` just like in the example.
+3. *To finish, please get your caller identity using the AWS command line.*
+- So, if we *google around* we find that we find out by command `aws sts get-caller-identity` [Documentation](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html).
+- Answer: `aws sts get-caller-identity`
+
+### Trufflehog Search
+- So we have to find out some credentials in github repo (*https://haugfactory.com/asnowball/aws_scripts.git*) using tool *trufflehog*.
+- Let's find out what it can do:
+```bash
+trufflehog git https://haugfactory.com/asnowball/aws_scripts.git
+```
+- Output:
+```bash
+🐷🔑🐷  TruffleHog. Unearth your secrets. 🐷🔑🐷
+
+Found unverified result 🐷🔑❓
+Detector Type: AWS
+Decoder Type: PLAIN
+Raw result: AKIAAIDAYRANYAHGQOHD
+Commit: 106d33e1ffd53eea753c1365eafc6588398279b5
+File: put_policy.py
+Email: asnowball <alabaster@northpolechristmastown.local>
+Repository: https://haugfactory.com/asnowball/aws_scripts.git
+Timestamp: 2022-09-07 07:53:12 -0700 -0700
+Line: 6
+
+Found unverified result 🐷🔑❓
+Detector Type: Gitlab
+Decoder Type: PLAIN
+Raw result: add-a-file-using-the-
+Timestamp: 2022-09-06 19:54:48 +0000 UTC
+Line: 14
+Commit: 2c77c1e0a98715e32a277859864e8f5918aacc85
+File: README.md
+Email: alabaster snowball <alabaster@northpolechristmastown.local>
+Repository: https://haugfactory.com/asnowball/aws_scripts.git
+
+Found unverified result 🐷🔑❓
+Detector Type: Gitlab
+Decoder Type: BASE64
+Raw result: add-a-file-using-the-
+Repository: https://haugfactory.com/asnowball/aws_scripts.git
+Timestamp: 2022-09-06 19:54:48 +0000 UTC
+Line: 14
+Commit: 2c77c1e0a98715e32a277859864e8f5918aacc85
+File: README.md
+Email: alabaster snowball <alabaster@northpolechristmastown.local>
+```
