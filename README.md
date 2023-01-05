@@ -539,4 +539,8 @@ Default output format [None]: json
 
 ## Burning Ring of Fire
 ### Buy a Hat
-- 
+- Click on the *HATS* vending machine.
+- Choose whatever hat you like.
+- Copy somewhere the hat id and the wallet address you must pay to.
+- Go the *KTM* (*KringleCoin Teller Machine*) and open it, click on the *Approve a KringleCoin transfer*.
+- Paste the wallet address you copied earlier in the '*"To" Address:*'
