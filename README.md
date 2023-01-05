@@ -562,4 +562,9 @@ Default output format [None]: json
 - Answer: `0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554`.
 
 ### Exploit a Smart Contract
-- 
+- When you open the *Bored Sporc Rowboat Society* you can notice it's just an iframe. So just copy the src address and open it on the new tab.
+- We wanna buy the *Sporc* so click on the *Presale* link.
+- So basicly, you need to put in your wallet address, the (markle) *proof* you can't get because... yeah no one contacted you and the *Validate Only* checkbutton (Basicly you will need this one just to find out if we did it right or not).
+- If you open the *sources* tab in the *Developer tools* (I'am using *Google Chrome*) you can see the *bsrs.js* file.
+- If you open it you can notice that in addition to the three things we normally enter, it also sends another data (the markle *root* address).
+- This mean we can make our own *root* 
