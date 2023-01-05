@@ -559,7 +559,7 @@ Default output format [None]: json
 - The *KringleCoin smart contract* address is logically somewhere in the beggining of the *blockchain*. So just go the *Block Number 0*.
 - No *Solidity Source File*. Click on the next one.
 - The second block (*1 block* if you count from zero) have the *Solidity Source File* correct. And somwhere on the beginning of the page you can see written in bold *Contract Address:*, that's our answer.
-- Answer: *0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554*.
+- Answer: `0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554`.
 
 ### Exploit a Smart Contract
 - 
