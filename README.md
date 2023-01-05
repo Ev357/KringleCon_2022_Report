@@ -548,7 +548,7 @@ Default output format [None]: json
 - Type your wallet key you stored in the beginning of *KringleCon* in the '*Your Key:*' box.
 - Finally click on the *Approve Transfer* button to make the transfer.
 - Go back to the *HATS* vending machine.
-- Click on '*Approved a transaction? Know your Hat ID? Click here to buy*' button.
+- Click on the '*Approved a transaction? Know your Hat ID? Click here to buy*' button.
 - Type your wallet address you stored in the beginning of *KringleCon* in the '*Your Wallet Address:*' box.
 - Paste the hat id you copied earlier in the '*Hat ID:*' box.
 - And finally click on the '*Make your purchase!*' button.
