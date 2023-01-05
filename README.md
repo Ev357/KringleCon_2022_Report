@@ -542,17 +542,21 @@ Default output format [None]: json
 - Click on the *HATS* vending machine.
 - Choose whatever hat you like.
 - Copy somewhere the hat id and the wallet address you must pay to.
-- Go the *KTM* (*KringleCoin Teller Machine*) and open it, click on the *Approve a KringleCoin transfer* button.
+- Go the *KTM* (*KringleCoin Teller Machine*) and open it, click on the "*Approve a KringleCoin transfer*" button.
 - Paste the wallet address you copied earlier in the '*"To" Address:*' box.
-- Type "*10*" in the '*Amount (KC):*' box.
-- Type your wallet key you stored in the beginning of *KringleCon* in the '*Your Key:*' box.
+- Type "*10*" in the "*Amount (KC):*" box.
+- Type your wallet key you stored in the beginning of *KringleCon* in the "*Your Key:*" box.
 - Finally click on the *Approve Transfer* button to make the transfer.
 - Go back to the *HATS* vending machine.
-- Click on the '*Approved a transaction? Know your Hat ID? Click here to buy*' button.
-- Type your wallet address you stored in the beginning of *KringleCon* in the '*Your Wallet Address:*' box.
-- Paste the hat id you copied earlier in the '*Hat ID:*' box.
-- And finally click on the '*Make your purchase!*' button.
+- Click on the "*Approved a transaction? Know your Hat ID? Click here to buy*" button.
+- Type your wallet address you stored in the beginning of *KringleCon* in the "*Your Wallet Address:*" box.
+- Paste the hat id you copied earlier in the "*Hat ID:*" box.
+- And finally click on the "*Make your purchase!*" button.
 
 ## Blockchain Divination
 - This one is 4🌲 but it's quite simple.
-- 
+- One hint tells us that the *Solidity Source File* is listed as "*KringleCoin.sol*".
+- The *KringleCoin smart contract* address is logically somewhere in the beggining of the *blockchain*. So just go the *Block Number 0*.
+- No *Solidity Source File*. Click on the next one.
+- The second block (*1 block* if you count from zero) have the *Solidity Source File* correct. And somwhere on the beginning of the page you can see written in bold *Contract Address:*, that's our answer.
+- Answer: *0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554*.
