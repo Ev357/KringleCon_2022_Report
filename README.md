@@ -32,26 +32,27 @@
 - Answer: `Yes`
 
 ### Windows Event Logs
-- This one is little bit harder so i will just say the answers, it's good to work with the actual Windows Event Log app.
-1. 
+- I don't really like *Windows*, so i don't want to describe this too much, but it's good to work with the actual *Windows Event Log app*.
+1. *What month/day/year did the attack take place? For example, 09/05/2021.*
+- I just saw this date many times in there so i tried it.
 - Answer: `12/24/2022`
-2.
+2. *An attacker got a secret from a file. What was the original file's name?*
 - Answer: `Recipe.txt`
-3.
+3. *The contents of the previous file were retrieved, changed, and stored to a variable by the attacker. This was done multiple times. Submit the last full PowerShell line that performed only these actions.*
 - Answer: `$foo = Get-Content .\Recipe| % {$_ -replace 'honey', 'fish oil'}`
-4.
+4. *After storing the altered file contents into the variable, the attacker used the variable to run a separate command that wrote the modified data to a file. This was done multiple times. Submit the last full PowerShell line that performed only this action.*
 - Answer: `$foo | Add-Content -Path 'Recipe'`
-5.
+5. *The attacker ran the previous command against one file multiple times. What is the name of this file?*
 - Answer: `Recipe.txt`
-6.
+6. *Were any files deleted? (Yes/No)*
 - Answer: `Yes`
-7.
+7. *Was the original file (from question 2) deleted? (Yes/No)*
 - Answer: `No`
-8.
+8. *What is the Event ID of the logs that show the actual command lines the attacker typed and ran?*
 - Answer: `4104`
-9.
+9. *Is the secret ingredient compromised (Yes/No)?*
 - Answer: `Yes`
-10.
+10. *What is the secret ingredient?*
 - Answer: `honey`
 
 ### Suricata Regatta
