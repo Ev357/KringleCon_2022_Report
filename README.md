@@ -1,39 +1,39 @@
 # KringleCon 2022 Report
 ## Tolkien Ring
 ### Wireshark Practice
-1.
+1. *There are objects in the PCAP file that can be exported by Wireshark and/or Tshark. What type of objects can be exported from this PCAP?*
 - So the most common object is http, so i tried and... yeah.
 - Answer: `http`
-2. 
+2. *What is the file name of the largest file we can export?*
 - Wireshark -> File -> Export Objects -> HTTP...
 - We can see here that the biggest file is the app.php file..
 - Answer: `app.php`
-3.
+3. *What packet number starts that app.php file?*
 - Wireshark -> File -> Export Objects -> HTTP...
 - We can also see here the packet number.
 - Answer: `687`
-4.
+4. *What is the IP of the Apache server?*
 - Wireshark -> File -> Export Objects -> HTTP...
 - If we click on the app.php, wireshark will display the packet, and we can see in the source the IP.
 - Answer: `192.185.57.242`
-5.
+5. *What file is saved to the infected host?*
 - Wireshark -> File -> Export Objects -> HTTP... -> app.php (The larger one) -> Save
 - If we explore the app.php file we can see in the javascript function that it save a file from the blob to the host with the following file name.
 - Answer: `Ref_Sept24-2020.zip`
-6.
+6. *Attackers used bad TLS certificates in this traffic. Which countries were they registered to? Submit the names of the countries in alphabetical order separated by a commas (Ex: Norway, South Korea).*
 - We can set the following filter to wireshark `tls.handshake.type == 2` for filtering the "Server Hello".
 - Wireshark -> Edit -> Find Packet...
 - We set the filter to `Packet Details`, check the `Case sensitive`, `String` and the searched string is `CountryName:`.
 - If we click on the find button again and again, we can see all the country codes (US, IL, SS).
 - We can go for example to https://countrycode.org/ and search for the country codes we found.
 - Answer: `United States, Israel, South Sudan`
-7.
+7. *Is the host infected (Yes/No)?*
 - I think so.
 - Answer: `Yes`
 
 ### Windows Event Logs
 - This one is little bit harder so i will just say the answers, it's good to work with the actual Windows Event Log app.
-1.
+1. 
 - Answer: `12/24/2022`
 2.
 - Answer: `Recipe.txt`
