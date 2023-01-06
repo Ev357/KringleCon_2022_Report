@@ -599,3 +599,5 @@ Proof: ['0xbad43ecb1c06545e8bce7adf738567ea8e2e51e1850960a8b96abbcd3b65bd10']
 - Open the *Developer tools*, go to the *Sources* tab and click on the *bsrs.js* file.
 - Edit the *root* variable to the address we got from the program. Click on the *Go!* button.
 - If everything looks good, uncheck the *'Validate Only'* checkbutton and finally click on the *Go!* button.
+
+### That's all ;)
