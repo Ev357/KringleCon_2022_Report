@@ -581,6 +581,7 @@ Receiving objects: 100% (65/65), 388.83 KiB | 2.95 MiB/s, done.
 Resolving deltas: 100% (21/21), done.
 
 elf@5f7babb2b521:~$ cd Merkle_Trees
+
 elf@5f7babb2b521:~$ sudo pip3 install -r requirements.txt
 ´´´
 - Change the **allowlist** variable in the **merkle_tree.py** file to *['yourWalletAddress', 'theOtherWalletAddressYouFoundInTheGallery"]'. For example *['0xa1861E96DeF10987E1793c8f77E811032069f8E9', '0xb9aA688bB7A1B085f307bf9a11790BFD24C5D5C2']*
