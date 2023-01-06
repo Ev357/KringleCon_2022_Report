@@ -569,4 +569,30 @@ Default output format [None]: json
 - If you open it you can notice that in addition to the three things we normally enter, it also sends another data (the markle *root* address).
 - This mean we can make our own *root* and *proof* using another compatible wallet address which we can find in the *Gallery* section of the web page (choose any one you like, it does not matter).
 - One of the hint gave us a github repo that can create it.
-- 
+- So just clone that repo.
+´´´console
+elf@5f7babb2b521:~$ git clone https://github.com/QPetabyte/Merkle_Trees.git
+Cloning into 'Merkle_Trees'...
+remote: Enumerating objects: 65, done.
+remote: Counting objects: 100% (65/65), done.
+remote: Compressing objects: 100% (61/61), done.
+remote: Total 65 (delta 21), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (65/65), 388.83 KiB | 2.95 MiB/s, done.
+Resolving deltas: 100% (21/21), done.
+
+elf@5f7babb2b521:~$ cd Merkle_Trees/
+elf@5f7babb2b521:~$ sudo pip3 install -r requirements.txt
+´´´
+- Change the *allowlist* variable in the *merkle_tree.py* file to *['yourWalletAddress', 'theOtherWalletAddressYouFoundInTheGallery"]'. For example *['0xa1861E96DeF10987E1793c8f77E811032069f8E9', '0xb9aA688bB7A1B085f307bf9a11790BFD24C5D5C2']*
+- Run the script.
+´´´console
+elf@5f7babb2b521:~$ python3 merkle_tree.py
+Root: 0x51b3c9f96090c689fa59185e43984391ae0274d4445f609937235f47da1f1bea
+Proof: ['0xbad43ecb1c06545e8bce7adf738567ea8e2e51e1850960a8b96abbcd3b65bd10']
+
+´´´
+- Now we have a new *root* and *proof*.
+- Go back to the *Presale* section of the page.
+- Type your wallet address in the *'Wallet Address:'* box.
+- Type the *proof* address we got from the program.
+- Check the *'Validate Only'* checkbutton if it is not already checked.
