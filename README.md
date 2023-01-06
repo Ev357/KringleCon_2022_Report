@@ -567,4 +567,4 @@ Default output format [None]: json
 - So basicly, you need to put in your wallet address, the (markle) *proof* you can't get because... yeah no one contacted you and the *Validate Only* checkbutton (Basicly you will need this one just to find out if we did it right or not).
 - If you open the *sources* tab in the *Developer tools* (I'am using *Google Chrome*) you can see the *bsrs.js* file.
 - If you open it you can notice that in addition to the three things we normally enter, it also sends another data (the markle *root* address).
-- This mean we can make our own *root* rehguerhgueg
+- This mean we can make our own *root* test
