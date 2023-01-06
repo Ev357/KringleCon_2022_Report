@@ -568,7 +568,7 @@ Default output format [None]: json
 - If you open the **sources** tab in the **Developer tools** (I'am using *Google Chrome*) you can see the **bsrs.js** file.
 - If you open it you can notice that in addition to the three things we normally enter, it also sends another data (the markle *root* address).
 - This mean we can make our own *root* and *proof* using another compatible wallet address which we can find in the *Gallery* section of the web page (choose any one you like, it does not matter).
-- One of the hint gave us a *github repo* that can create it [repo](https://github.com/QPetabyte/Merkle_Trees).
+- One of the hint gave us a *github repo* that can create it ([repo](https://github.com/QPetabyte/Merkle_Trees)).
 - So just clone that repo.
 ```console
 elf@5f7babb2b521:~$ git clone https://github.com/QPetabyte/Merkle_Trees.git
