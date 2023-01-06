@@ -585,12 +585,12 @@ elf@5f7babb2b521:~$ sudo pip3 install -r requirements.txt
 ```
 - Change the **allowlist** variable in the **merkle_tree.py** file to *['yourWalletAddress', 'theOtherWalletAddressYouFoundInTheGallery"]'. For example *['0xa1861E96DeF10987E1793c8f77E811032069f8E9', '0xb9aA688bB7A1B085f307bf9a11790BFD24C5D5C2']*
 - Run the script.
-´´´console
+```console
 elf@5f7babb2b521:~$ python3 merkle_tree.py
 Root: 0x51b3c9f96090c689fa59185e43984391ae0274d4445f609937235f47da1f1bea
 Proof: ['0xbad43ecb1c06545e8bce7adf738567ea8e2e51e1850960a8b96abbcd3b65bd10']
 
-´´´
+```
 - Now we have a new *root* and *proof*.
 - Go back to the *Presale* section of the page.
 - Type your wallet address in the *'Wallet Address:'* box.
