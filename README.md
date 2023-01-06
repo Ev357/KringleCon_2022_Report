@@ -160,7 +160,7 @@ cat /flag.txt
 - So we can just filter the ip we found above in wireshark with the `ip.addr == 18.222.86.32` filter.
 - We can add a *http* filter `ip.addr == 18.222.86.32 && http`.
 - If we scroll a bit you can see the login post requests.
-- Right click on the first one, Follow > HTTP Stream and __boom__.
+- Right click on the first one, Follow > **HTTP** Stream and __boom__.
 - Answer: `alice`.
 
 ### 404 FTW
